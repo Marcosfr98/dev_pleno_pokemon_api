@@ -35,6 +35,11 @@ class _AppState extends State<App> {
             ),
           ),
           theme: ThemeData(
+            floatingActionButtonTheme: FloatingActionButtonThemeData(
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white,
+              iconSize: 22.sp,
+            ),
             appBarTheme: AppBarTheme(
               iconTheme: IconThemeData(
                 size: 22.sp,

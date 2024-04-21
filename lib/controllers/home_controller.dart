@@ -12,9 +12,10 @@ class HomeController {
   Future<GetPokemon?> get({String? offset}) async {
     try {
       final endpoint = Uri.parse(
-          "https://pokeapi.co/api/v2/pokemon/?offset=${offset ?? 0}&limit=20");
+          "https://pokeapi.co/api/v2/pokemon/?offset=${offset != null ? offset : 0}limit=20");
       http.Response response = await http.get(endpoint);
       GetPokemon pokemons = GetPokemon.fromJson(jsonDecode(response.body));
+      print(response.body);
       return pokemons;
     } catch (error, stackTrace) {
       print("$error \n $stackTrace");
